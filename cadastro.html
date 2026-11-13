@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Mesa</title>
+</head>
+
+<style>
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @view-transition {
+        navigation: auto;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        gap: 15px;
+        background-color: #f0ece4;
+    }
+
+    .titulo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        font-size: 50px;
+        margin-left: 10px;
+    }
+
+    .titulo img {
+        width: 70px;
+        height: auto;
+    }
+
+    .titulo a {
+        text-decoration: none;
+        color: #1f2a37;
+    }
+
+    .busca {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 15px;
+        width: 300px;
+        border-radius: 25px;
+    }
+
+    .busca-texto {
+        font-size: 14px;
+        color: #000000;
+    }
+
+    .busca img {
+        width: 20px;
+        height: auto;
+    }
+
+    .navegar-head {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 20px;
+        margin-right: 10px;
+        font-size: 25px;
+    }
+
+    .navegar-head a {
+        text-decoration: none;
+        color: #1f2a37;
+    }
+
+    .main-3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .main-3 h1 {
+        font-size: 30px;
+        color: #1f2a37;
+        text-align: center;
+    }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        margin-top: 20px;
+    }
+
+    .formulario-titulo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #eadfc8;
+        height: 70px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .formulario-titulo h2 {
+        font-size: 28px;
+        color: #1f2a37;
+    }
+
+    .campos {
+        display: flex;
+        flex-direction: column;
+        background-color: #f0ece4;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .campo {
+        background-color: white;
+        padding: 15px;
+        font-size: 14px;
+        color: #000000;
+        border-radius: 15px;
+    }
+
+    .campo-mesa {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 15px;
+        font-size: 14px;
+        color: #000000;
+        border-radius: 15px;
+    }
+
+    .campo-mesa a {
+        color: #1a5fb4;
+        font-size: 12px;
+    }
+
+    .formulario-botao {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #eadfc8;
+        height: 150px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .formulario-botao a {
+        text-decoration: none;
+        color: #1f2a37;
+        font-size: 35px;
+    }
+
+    .rodape {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #c8beae;
+        padding: 30px;
+        gap: 20px;
+        color: #1f2a37;
+    }
+
+    .rodape-coluna {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rodape-coluna h2 {
+        font-size: 22px;
+    }
+
+    .rodape-coluna p {
+        font-size: 16px;
+    }
+
+    @media (max-width: 485px) {
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0ece4;
+        }
+
+        .titulo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            font-size: 18px;
+            margin-left: 0px;
+        }
+
+        .titulo img {
+            width: 30px;
+            height: auto;
+        }
+
+        .titulo a {
+            text-decoration: none;
+            color: #1f2a37;
+        }
+
+        .busca {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding: 8px;
+            width: 20px;
+            border-radius: 25px;
+        }
+
+        .busca-texto {
+            display: none;
+        }
+
+        .busca img {
+            width: 20px;
+            height: auto;
+        }
+
+        .navegar-head {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            margin-right: 0px;
+            font-size: 12px;
+        }
+
+        .navegar-head a {
+            text-decoration: none;
+            color: #1f2a37;
+        }
+
+        .main-3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .main-3 h1 {
+            font-size: 16px;
+            color: #1f2a37;
+            text-align: center;
+        }
+
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            width: 85%;
+            margin-top: 10px;
+        }
+
+        .formulario-titulo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eadfc8;
+            height: 80px;
+            text-align: center;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .formulario-titulo h2 {
+            font-size: 22px;
+            color: #1f2a37;
+        }
+
+        .campos {
+            display: flex;
+            flex-direction: column;
+            background-color: #f0ece4;
+            padding: 15px;
+            gap: 15px;
+        }
+
+        .campo {
+            background-color: white;
+            padding: 12px;
+            font-size: 13px;
+            color: #000000;
+            border-radius: 15px;
+        }
+
+        .campo-mesa {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 12px;
+            font-size: 12px;
+            color: #000000;
+            gap: 10px;
+            border-radius: 15px;
+        }
+
+        .formulario-botao {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eadfc8;
+            height: 110px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .formulario-botao a {
+            text-decoration: none;
+            color: #1f2a37;
+            font-size: 22px;
+        }
+
+        .rodape {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            background-color: #c8beae;
+            padding: 10px;
+            gap: 5px;
+            color: #1f2a37;
+        }
+
+        .rodape-coluna {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+        }
+
+        .rodape-coluna h2 {
+            font-size: 10px;
+        }
+
+        .rodape-coluna p {
+            font-size: 7px;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="titulo"><img src="assets/logo.png"><a href="lp.html">Sua<b>Mesa</b></a></div>
+            <div class="busca">
+                <div class="busca-texto">Faça sua busca</div>
+                <img src="assets/lupa.png">
+            </div>
+            <div class="navegar-head">
+                <div class="navegar"><a href="lp.html">Início</a></div>
+                <div class="navegar"><a href="restaurantes.html">Restaurantes</a></div>
+                <div class="navegar"><a href="cadastro.html">Login</a></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-3">
+            <h1>CADASTRE-SE PARA COMEÇAR A RESERVAR</h1>
+            <div class="formulario">
+                <div class="formulario-titulo"><h2>FAÇA SUA RESERVA</h2></div>
+                <div class="campos">
+                    <div class="campo">Nome completo</div>
+                    <div class="campo">Email</div>
+                    <div class="campo">Telefone</div>
+                    <div class="campo">Cpf</div>
+                    <div class="campo">Observações</div>
+                </div>
+                <div class="formulario-botao"><a href="restaurantes.html"><b>CADASTRAR-SE</b></a></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="rodape">
+            <div class="rodape-coluna">
+                <h2>Sua Mesa</h2>
+                <p>A forma mais rápida e prática de <br>reservar sua mesa nos melhores <br>restaurantes da sua cidade.</p>
+            </div>
+            <div class="rodape-coluna">
+                <h2>Para Você</h2>
+                <p>Como funciona <br>Restaurantes <br>Cidades Atendidas <br>Central de Ajuda</p>
+            </div>
+            <div class="rodape-coluna">
+                <h2>Para Restaurantes</h2>
+                <p>Cadastre seu Restaurante <br>Área do Parceiro <br>Planos e Soluções</p>
+            </div>
+            <div class="rodape-coluna">
+                <h2>Contato</h2>
+                <p>suporte.suamesa@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
